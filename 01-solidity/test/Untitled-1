@@ -1,0 +1,6 @@
+npx hardhat test ./test/01_solidity_data_types.test.ts
+npx hardhat test ./test/02_solidity_constructor.test.ts
+npx hardhat test ./test/03_solidity_functions.test.ts
+npx hardhat test ./test/04_solidity_modifiers.test.ts
+npx hardhat test ./test/05_solidity_errors.test.ts
+npx hardhat test ./test/06_solidity_events.test.ts

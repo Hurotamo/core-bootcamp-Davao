@@ -10,14 +10,15 @@ describe("SolidityModifiers", function () {
   async function deploy() {
     const [account1, account2] = await hre.ethers.getSigners();
 
-    const SolidityModifiers = await hre.ethers.getContractFactory(
-      "SolidityModifiers"
-    );
+    const SolidityModifiers = await hre.ethers.getContractFactory("SolidityModifiers");
+    console.log("Admin address is:", account1.address);
+    console.log("Account 2 address is:", account2.address);
+    
     const INITIAL_BALANCE = 1_000_000;
 
     const ctcSolidityModifiers = await SolidityModifiers.deploy(
       INITIAL_BALANCE,
-      account1
+      account1.address
     );
 
     return { ctcSolidityModifiers, account1, account2 };
@@ -30,11 +31,13 @@ describe("SolidityModifiers", function () {
       expect(ctcSolidityModifiers).not.to.be.undefined;
     });
 
-    it("should add balance if owner", async function () {
+    it("should add balance if admin", async function () {
+        console.log("Attempting to add balance as admin...");
       const { ctcSolidityModifiers, account1 } = await loadFixture(deploy);
       await ctcSolidityModifiers.connect(account1).addBalance(1_000_000);
 
-      const balance = await ctcSolidityModifiers.getBalance();
+        const balance = await ctcSolidityModifiers.getBalance();
+        console.log("Balance after addition is now ", balance);
       console.log("balance is now ", balance);
     });
 

@@ -13,10 +13,10 @@ contract SolidityDataTypes {
         accounts["theblokc"] = 999999;
 
         // TODO: print the values above using console.log
-        // console.log("balance is ", balance);
+         console.log("balance is ", balance);
 
-        // console.log("owner is ", owner);
+         console.log("owner is ", owner);
 
-        // console.log("account is ", accounts["theblokc"]);
+         console.log("account is ", accounts["theblokc"]);
     }
 }

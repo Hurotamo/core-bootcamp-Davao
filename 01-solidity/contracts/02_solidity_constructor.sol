@@ -3,11 +3,11 @@ pragma solidity ^0.8.9;
 import "hardhat/console.sol";
 
 contract SolidityConstructor {
-    uint256 balance = 0;
+    uint256 balance = 100_000_000;
 
     constructor(uint256 initialBalance) {
-        // balance = initialBalance;
+         balance = initialBalance;
 
-        // console.log("balance is now ", balance);
+         console.log("balance is now ", balance);
     }
 }

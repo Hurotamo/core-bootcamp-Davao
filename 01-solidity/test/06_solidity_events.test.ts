@@ -17,7 +17,7 @@ describe("SolidityEvents", function () {
       INITIAL_BALANCE,
       account1
     );
-
+    
     return { ctcSolidityEvents, account1 };
   }
 

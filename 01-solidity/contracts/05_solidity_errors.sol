@@ -14,17 +14,17 @@ contract SolidityErrors {
     }
 
     modifier isAdmin() {
-        // if (msg.sender != admin) {
-        //     revert YouAreNotError();
-        // }
-        // _;
+         if (msg.sender != admin) {
+             revert YouAreNotError();
+         }
+         _;
     }
 
     function addBalance(uint256 toAddBalance) public isAdmin {
-        // balance += toAddBalance;
+        balance += toAddBalance;
     }
 
     function getBalance() public view returns (uint256) {
-        // return balance;
+         return balance;
     }
 }
